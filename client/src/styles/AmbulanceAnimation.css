@@ -1,8 +1,143 @@
 .ambulance-container {
+    width: 100%;
+
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
+    padding: 30px 0;
+    background: transparent;
 }
+
+.road {
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    position: relative;
+    height: 150px;
+}
+
+.ambulance {
+    position: relative;
+    width: 220px;
+    height: 90px;
+    background-color: white;
+    border: 3px solid #e84545;
+    border-radius: 10px;
+    animation: drive 6s linear infinite;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.window {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    width: 40px;
+    height: 30px;
+    background-color: #cce8ff;
+    border: 2px solid #333;
+    border-radius: 3px;
+}
+
+.cross {
+    position: absolute;
+    top: 25px;
+    left: 90px;
+    width: 20px;
+    height: 20px;
+}
+.cross::before, .cross::after {
+    content: '';
+    position: absolute;
+    background: #e84545;
+}
+.cross::before {
+    width: 20px;
+    height: 4px;
+    top: 8px;
+    left: 0;
+}
+.cross::after {
+    height: 20px;
+    width: 4px;
+    left: 8px;
+    top: 0;
+}
+
+.wheel {
+    position: absolute;
+    bottom: -10px;
+    width: 25px;
+    height: 25px;
+    background-color: #222;
+    border: 3px solid #444;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+.wheel.front {
+    left: 25px;
+}
+.wheel.back {
+    right: 25px;
+}
+
+.sirens {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.siren {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: blink 1s infinite alternate;
+}
+.siren.red {
+    background-color: red;
+}
+.siren.blue {
+    background-color: blue;
+    animation-delay: 0.5s;
+}
+
+.light {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    width: 12px;
+    height: 12px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 4px rgba(255, 255, 0, 0.5);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes drive {
+    0% {
+        transform: translateX(-300px);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+

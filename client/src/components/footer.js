@@ -1,24 +1,26 @@
 import React from 'react';
-import "../styles/footer.css";
+import '../styles/footer.css';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 
 const FooterSection = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
+
         {/* Company Info */}
         <div className="footer-column">
           <h4>Life+ Ambulance</h4>
           <p>Helping you in emergencies with quick and reliable ambulance services, anytime, anywhere.</p>
         </div>
 
-        {/* Social Media Links (replacing Quick Links) */}
+        {/* Social Media */}
         <div className="footer-column">
           <h4>Social Media</h4>
           <ul className="social-links">
-            <li><i className="fab fa-facebook-f"></i> Facebook</li>
-            <li><i className="fab fa-twitter"></i> Twitter</li>
-            <li><i className="fab fa-instagram"></i> Instagram</li>
-            <li><i className="fab fa-linkedin-in"></i> LinkedIn</li>
+            <li><FaFacebookF /> Facebook</li>
+            <li><FaTwitter /> Twitter</li>
+            <li><FaInstagram /> Instagram</li>
+            <li><FaLinkedinIn /> LinkedIn</li>
           </ul>
         </div>
 
@@ -39,3 +41,4 @@ const FooterSection = () => {
 };
 
 export default FooterSection;
+
